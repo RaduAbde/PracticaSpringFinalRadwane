@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<style>
+ .grow {
+  animation: grow 2s ease;
+}
+@keyframes grow {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>Add a New Car</title>
+</head>
+<body>
+<br/>
+<div class="container border border-primary border-4 rounded grow" style="background-color:#FF5733">
+    <h1>Form Car</h1>
+    <br/>
+    <form action="#" th:action="@{/view/add}" th:object="${c}" method="POST">
+        <input type="text" th:field="*{matricula}" placeholder="Insert Plate" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{marca}" placeholder="Insert Car Label" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{modelo}" placeholder="Insert Car Model" class="form-control mb-4 col-4">
+        <input type="number" th:field="*{potencia}" placeholder="Insert Horse Power" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2 mr-5" >Save</button>
+        <a th:href="@{/view/cars}" class="btn btn-info">Go Back to Car List</a>
+        <br>
+        <h5 style="color:#FF5733">dasd</h5>
+
+    </form>
+</div>
+
+</body>
+</html>
